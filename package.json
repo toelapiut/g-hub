@@ -5,11 +5,54 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "release": "standard-version",
+    "lint": "eslint src/**/*.js src/**/*.js .eslintrc.json --ext js,jsx",
+    "lint:fix": "eslint src/**/*.js src/**/*.js .eslintrc.json --fix --ext js,jsx"
   },
   "dependencies": {
     "next": "10.0.6",
     "react": "17.0.1",
     "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@fullhuman/postcss-purgecss": "^4.0.0",
+    "@testing-library/react-hooks": "^3.4.2",
+    "axios": "^0.21.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "8.0.1",
+    "babel-jest": "^26.6.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "check-prop-types": "^1.1.2",
+    "commitlint": "^11.0.0",
+    "eslint": "npm:eslint-nullish-coalescing",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-jest": "^24.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.2",
+    "postcss-preset-env": "^6.7.0",
+    "prop-types": "^15.7.2",
+    "react-test-renderer": "^17.0.1",
+    "standard-version": "^9.0.0",
+    "tailwindcss": "^1.9.4"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./**/*.{js,jsx,ts,tsx}": [
+      "eslint src/**/*.js src/**/*.js"
+    ]
   }
 }
