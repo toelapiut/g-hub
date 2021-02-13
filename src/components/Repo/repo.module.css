@@ -1,0 +1,85 @@
+.contain {
+    max-width: 30rem;
+    width: 30rem;
+    min-height: 10rem;
+    @apply p-5 mb-10 mr-10 relative;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+}
+
+.header {
+    @apply flex flex-row items-center justify-between;
+}
+
+.bookmark {
+    @apply h-5 w-5 fill-current
+}
+
+.fork {
+    @apply h-4 w-4 fill-current
+}
+
+.forkWrap {
+    @apply flex flex-row  items-center;
+}
+
+.repo {
+    @apply font-bold text-sm text-blue capitalize mt-1 mb-3;
+}
+
+
+.blue, .orange, .yellow, .green, .pink {
+    @apply h-10 w-10 ;
+    color: transparent;
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.language {
+    @apply flex flex-row items-center  pr-8
+}
+
+.languageText {
+    @apply font-semibold text-sm text-white  ml-2;
+}
+
+.blue {
+    background: dodgerblue;
+    height: 10px;
+    width: 10px;
+}
+
+.orange {
+    background: orange;
+}
+
+.green {
+    background: greenyellow;
+}
+
+.bookmarker{
+    @apply cursor-pointer;
+}
+.pink {
+    background: hotpink;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.description {
+    @apply font-normal text-xs text-white;
+}
+
+.body {
+
+}
+
+.footer {
+    @apply relative flex flex-row mt-3;
+}

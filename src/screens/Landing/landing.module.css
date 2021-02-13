@@ -1,0 +1,21 @@
+.contain {
+    @apply flex flex-row;
+    min-height: calc(100vh - 5rem);
+    overflow-x: scroll;
+}
+
+.column {
+    max-width: 40rem;
+    @apply flex flex-col justify-center
+}
+
+.title, .subtitle {
+    font-size: 3rem;
+    line-height: 1.2;
+    @apply font-sans font-extrabold;
+
+}
+
+.subtitle {
+    @apply text-xl font-light pt-3 mb-10;
+}

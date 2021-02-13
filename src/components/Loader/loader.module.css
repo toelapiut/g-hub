@@ -1,0 +1,40 @@
+.container {
+    @apply flex flex-row items-center justify-center w-full
+}
+
+.dotFlashing {
+    @apply relative rounded-full bg-night text-night h-2 w-2;
+    animation: dotFlashingFrame 1s infinite linear alternate;
+    animation-delay: .5s;
+}
+
+.dotFlashing::before, .dotFlashing::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+
+.dotFlashing::before {
+    @apply rounded-full bg-manatee text-manatee h-2 w-2;
+    left: -15px;
+    animation: dotFlashingFrame 1s infinite alternate;
+    animation-delay: 0s;
+}
+
+.dotFlashing::after {
+    @apply rounded-full bg-manatee text-manatee h-2 w-2;
+    left: 15px;
+    animation: dotFlashingFrame 1s infinite alternate;
+    animation-delay: 1s;
+}
+
+@keyframes dotFlashingFrame {
+    0% {
+        @apply bg-manatee;
+    }
+    50%,
+    100% {
+        @apply bg-grey;
+    }
+}

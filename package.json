@@ -1,6 +1,6 @@
 {
   "name": "g-hub",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,15 +11,24 @@
     "test:coverage": "jest --coverage",
     "release": "standard-version",
     "lint": "eslint src/**/*.js src/**/*.js .eslintrc.json --ext js,jsx",
-    "lint:fix": "eslint src/**/*.js src/**/*.js .eslintrc.json --fix --ext js,jsx"
+    "lint:fix": "eslint --fix --ext .js,.jsx ."
   },
   "dependencies": {
     "@jest/globals": "^26.6.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
+    "lodash": "^4.17.20",
     "next": "10.0.6",
+    "nextjs-fonts": "^0.22.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-progressive-graceful-image": "^0.6.12",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "typy": "^3.3.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
