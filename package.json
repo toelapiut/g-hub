@@ -11,15 +11,17 @@
     "test:coverage": "jest --coverage",
     "release": "standard-version",
     "lint": "eslint src/**/*.js src/**/*.js .eslintrc.json --ext js,jsx",
-    "lint:fix": "eslint src/**/*.js src/**/*.js .eslintrc.json --fix --ext js,jsx"
+    "lint:fix": "eslint --fix --ext .js,.jsx ."
   },
   "dependencies": {
     "@jest/globals": "^26.6.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "next": "10.0.6",
+    "nextjs-fonts": "^0.22.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-progressive-graceful-image": "^0.6.12",
     "typy": "^3.3.0"
   },
   "devDependencies": {

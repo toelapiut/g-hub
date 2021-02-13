@@ -20,6 +20,7 @@ module.exports = {
       whisper: '#C1C1C1',
       white: '#fff',
       blue: '#007ace',
+      darkblue:'#06163c',
       red: '#CA2C33',
       error: '#ED4337',
       lightpink: '#FFB1B3',

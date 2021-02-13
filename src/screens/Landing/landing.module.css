@@ -1,6 +1,7 @@
 .contain {
     @apply flex flex-row;
-    height: calc(100vh - 5rem);
+    min-height: calc(100vh - 5rem);
+    overflow-x: scroll;
 }
 
 .column {

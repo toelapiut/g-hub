@@ -3,24 +3,26 @@ import PropTypes from 'prop-types';
 import styles from './selectinput.module.css';
 import Loader from '../Loader';
 import {errorStyles} from '../../helper';
+import ProgressiveImage from 'react-progressive-graceful-image';
+import Link from 'next/link';
 
-export const SelectInput = ({
-  name,
-  id,
-  list,
-  onFocus,
-  onSelect,
-  label,
-  optional,
-  placeholder,
-  value,
-  onChangeText,
-  sideText,
-  disabled,
-  loading,
-  isOpen,
-  error,
-}) => {
+export const SelectInput = (
+  {
+    name,
+    id,
+    list,
+    onFocus,
+    label,
+    optional,
+    placeholder,
+    value,
+    onChangeText,
+    sideText,
+    disabled,
+    loading,
+    isOpen,
+    error,
+  }) => {
 
   return (
     <div className={disabled ? styles.disabledContain : styles.contain} style={errorStyles(error)}>
@@ -36,11 +38,20 @@ export const SelectInput = ({
           onChange={onChangeText}
           className={styles.inputField}/>
       </div>
-      {isOpen && <div className={`${styles.dropDown}`}>
+      {isOpen &&
+      <div className={`${styles.dropDown}`}>
         {list.map((data, index) =>
-          <div className={styles.list} key={index.toString()} onClick={() => onSelect(data)}>
-            <p className={styles.text}>{data[id]}</p>
-          </div>
+          <Link key={index.toString()} as={`/repository/${data[id]}`} href={'/repository/[username]'}>
+            <div className={styles.list} >
+              <ProgressiveImage
+                data-test="listingImage"
+                placeholder={data['avatar_url']}
+                src={data['avatar_url']}>
+                {(src) => <div className={styles.linkProfile} style={{backgroundImage: `url(${src})`}}/>}
+              </ProgressiveImage>
+              <p className={styles.text}>{data[id]}</p>
+            </div>
+          </Link>
         )}
       </div>
       }
@@ -63,7 +74,6 @@ SelectInput.propTypes = {
   onChangeText: PropTypes.func.isRequired,
   sideText: PropTypes.string,
   placeholder: PropTypes.string,
-  onSelect: PropTypes.func,
   onFocus: PropTypes.func,
   optional: PropTypes.bool,
   disabled: PropTypes.bool,

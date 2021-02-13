@@ -19,14 +19,21 @@
     @apply outline-none;
 }
 
-.input {
+.linkProfile {
+    @apply h-8 w-8 rounded-full bg-no-repeat bg-center bg-cover;
 }
 
-.sideText {
+.initialText {
+    @apply font-semibold text-sm text-white;
 }
+
+.initial {
+    @apply bg-grey h-full flex justify-center items-center;
+}
+
 
 .list {
-    @apply border-b border-whisper pb-4 pt-4;
+    @apply border-b border-darkblue pb-4 pt-4 flex flex-row items-center;
 }
 
 .list:first-child {
@@ -42,5 +49,5 @@
 }
 
 .text {
-    @apply font-sans font-normal text-night text-sm;
+    @apply font-sans font-light text-white text-lg ml-5;
 }

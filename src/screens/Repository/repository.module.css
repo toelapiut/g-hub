@@ -1,0 +1,35 @@
+.title, .subtitle {
+    font-size: 2rem;
+    line-height: 1.2;
+    @apply font-sans font-bold;
+
+}
+
+.subtitle {
+    @apply text-base font-normal pt-3 mb-10;
+}
+
+.linkProfile {
+    @apply h-20 w-20 rounded-full bg-no-repeat bg-center bg-cover;
+}
+
+.user{
+    @apply flex flex-row items-center mb-10;
+}
+
+.bio{
+    @apply text-base font-normal pt-3;
+}
+
+.userDetails{
+    max-width: 45rem;
+    @apply ml-10 ;
+}
+
+.contain {
+    @apply pt-32;
+}
+
+.repoWrap{
+    @apply flex flex-row flex-wrap;
+}
