@@ -1,0 +1,4 @@
+.contain{
+    max-width: 80rem;
+    @apply m-auto
+}

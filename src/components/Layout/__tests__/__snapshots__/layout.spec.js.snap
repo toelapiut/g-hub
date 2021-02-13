@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`layout Component matches the navbar snapshots 1`] = `
+<div
+  className="contain"
+/>
+`;
