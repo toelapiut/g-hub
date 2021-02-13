@@ -1,13 +1,13 @@
 import React from 'react';
-import Layout from '../';
+import Landing from '../';
 import renderer from 'react-test-renderer';
 import {describe, it} from '@jest/globals';
 
-describe('layout Component', () => {
+describe('landing page Component', () => {
 
-  it('matches the layout snapshots', () => {
+  it('matches the landing page snapshots', () => {
     const tree = renderer.create(
-      <Layout/>
+      <Landing/>
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

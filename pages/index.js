@@ -1,7 +1,7 @@
+import Landing from '../src/screens/Landing';
+
 export default function Home() {
   return (
-    <div>
-      <p>Hello world </p>
-    </div>
+    <Landing/>
   );
 }

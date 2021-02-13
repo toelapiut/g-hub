@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`landing page Component matches the landing page snapshots 1`] = `
+<div
+  className="contain"
+>
+  <div
+    className="column"
+  >
+    <h1
+      className="title"
+    >
+      Where the world builds software
+    </h1>
+    <h4
+      className="subtitle"
+    >
+      Millions of developers and companies build, ship, and maintain their software on GitHub—the largest and most advanced development platform in the world.
+    </h4>
+    <div>
+      <div
+        className="contain"
+        style={Object {}}
+      >
+        <p
+          className="label"
+          style={Object {}}
+        >
+          
+           
+        </p>
+        <div
+          className="input"
+        >
+          <span
+            className="sideText"
+            style={Object {}}
+          />
+          <input
+            className="inputField"
+            name="Search"
+            onChange={[Function]}
+            onFocus={[Function]}
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="column"
+  >
+    <div
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "display": "inline-block",
+          "margin": 0,
+          "maxWidth": "100%",
+          "overflow": "hidden",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "boxSizing": "border-box",
+            "display": "block",
+            "maxWidth": "100%",
+          }
+        }
+      >
+        <img
+          alt=""
+          aria-hidden={true}
+          role="presentation"
+          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+          style={
+            Object {
+              "border": "none",
+              "display": "block",
+              "margin": 0,
+              "maxWidth": "100%",
+              "padding": 0,
+            }
+          }
+        />
+      </div>
+      <img
+        alt="global image"
+        decoding="async"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        style={
+          Object {
+            "border": "none",
+            "bottom": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": 0,
+            "left": 0,
+            "margin": "auto",
+            "maxHeight": "100%",
+            "maxWidth": "100%",
+            "minHeight": "100%",
+            "minWidth": "100%",
+            "objectFit": undefined,
+            "objectPosition": undefined,
+            "padding": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "visibility": "hidden",
+            "width": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

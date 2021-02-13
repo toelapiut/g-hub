@@ -1,0 +1,46 @@
+.contain, .disabledContain {
+    @apply border-white border rounded pt-2 px-3 pb-2;
+    max-width: 38rem;
+}
+
+.disabledContain {
+    @apply bg-whisper cursor-not-allowed;
+}
+
+.label {
+    @apply text-white border-none p-0 font-semibold text-xs m-0;
+}
+
+.inputField {
+    @apply text-white border-none p-0 font-normal text-xl w-full bg-night h-12 ;
+}
+
+.inputField:hover, .inputField:focus, .inputField:active {
+    @apply outline-none;
+}
+
+.input {
+}
+
+.sideText {
+}
+
+.list {
+    @apply border-b border-whisper pb-4 pt-4;
+}
+
+.list:first-child {
+    @apply pt-4;
+}
+
+.list:hover {
+    @apply cursor-pointer;
+}
+
+.list:last-child {
+    @apply border-none pb-3;
+}
+
+.text {
+    @apply font-sans font-normal text-night text-sm;
+}

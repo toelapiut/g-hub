@@ -14,7 +14,10 @@ module.exports = {
       // 'xxl': {'min': '2400px'}
     },
     colors: {
-      night: '#2b3038',
+      night: '#040D21',
+      manatee: '#040D21',
+      grey: '#C1C1C1',
+      whisper: '#C1C1C1',
       white: '#fff',
       blue: '#007ace',
       red: '#CA2C33',
