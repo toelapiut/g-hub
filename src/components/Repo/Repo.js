@@ -1,7 +1,7 @@
 import styles from './repo.module.css';
 import PropTypes from 'prop-types';
 
-export const Repo = ({name, description, forks_count, language}) => {
+export const Repo = ({name, bookmarks, description, id, forks_count, language, onBookmark}) => {
   const onStyles = (lang) => {
     if (lang) {
       switch (lang.toLowerCase()) {
@@ -19,18 +19,25 @@ export const Repo = ({name, description, forks_count, language}) => {
     }
   };
 
-
+  // console.log({bookmarks})
   return (
     <div className={styles.contain}>
       <div className={styles.header}>
         <h4 className={styles.repo}>{name}</h4>
-        <div>
-          <svg className={styles.bookmark} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 330">
-            <path d="M265,0H65c-8.284,0-15,6.716-15,15v300c0,5.766,3.305,11.022,8.502,13.52c5.197,2.498,11.365,1.796,15.868-1.807L165,254.21
+        <div className={styles.bookmarker} onClick={() => onBookmark({name, description, id, forks_count, language}, bookmarks)}>
+          {bookmarks ?
+            <svg  className={styles.bookmark} xmlns="http://www.w3.org/2000/svg" width="230" height="330.001" viewBox="0 0 230 330.001">
+              <path
+                d="M265,0H65A15,15,0,0,0,50,15V315a15,15,0,0,0,24.37,11.713L165,254.21l90.63,72.5A15,15,0,0,0,280,315V15A15,15,0,0,0,265,0Z"
+                transform="translate(-50)" fill="#fff"/>
+            </svg>
+            : <svg className={styles.bookmark} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 330">
+              <path d="M265,0H65c-8.284,0-15,6.716-15,15v300c0,5.766,3.305,11.022,8.502,13.52c5.197,2.498,11.365,1.796,15.868-1.807L165,254.21
 	l90.63,72.503c2.712,2.17,6.027,3.287,9.372,3.287c2.208,0,4.43-0.487,6.496-1.48c5.197-2.497,8.502-7.753,8.502-13.52V15
 	C280,6.716,273.284,0,265,0z M250,283.79l-75.63-60.503c-2.739-2.191-6.055-3.287-9.37-3.287s-6.631,1.096-9.37,3.287L80,283.79V30
 	h170V283.79z"/>
-          </svg>
+            </svg>
+          }
         </div>
       </div>
       <div className={styles.body}>
@@ -68,7 +75,10 @@ export const Repo = ({name, description, forks_count, language}) => {
 
 Repo.propTypes = {
   name: PropTypes.string,
+  id: PropTypes.number,
   description: PropTypes.string,
+  bookmarks: PropTypes.bool,
+  onBookmark: PropTypes.func,
   forks_count: PropTypes.number,
   language: PropTypes.string
 };

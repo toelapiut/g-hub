@@ -7,4 +7,7 @@ module.exports = {
       return config;
     }
   }),
+  env: {
+    NEXT_PUBLIC_BASE_URL: 'https://api.github.com'
+  },
 };

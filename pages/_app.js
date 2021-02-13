@@ -2,13 +2,18 @@ import '../styles/globals.css';
 import '../styles/tailwind.css';
 import PropTypes from 'prop-types';
 import Layout from '../src/components/Layout';
+import {configureStore} from '../src/stores/configureStore';
+import {Provider} from 'react-redux';
 
+const {store} = configureStore();
 
 function MyApp({Component, pageProps}) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <Provider store={store}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </Provider>
   );
 }
 

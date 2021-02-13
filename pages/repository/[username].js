@@ -1,12 +1,23 @@
+import PropTypes from 'prop-types';
+import axios from 'axios';
 import Repository from '../../src/screens/Repository';
 import {http} from '../../src/helper';
-import axios from 'axios';
-import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {bookmarkDeleteAction, bookmarkSaveAction} from '../../src/actions';
 
-export const Index = ({response, user, query}) => {
+export const Index = ({response, user, query, bookmarkDeleteAction, bookmarks, bookmarkSaveAction}) => {
+  const onBookmark = (item, status) => {
+    if(status){
+      bookmarkDeleteAction(item);
+    }
+    bookmarkSaveAction(item);
+  };
 
   return (
     <Repository
+      bookmarks={Object.keys(bookmarks)}
+      onBookmark={onBookmark}
       user={user}
       username={query?.username}
       results={response}
@@ -18,7 +29,10 @@ export const Index = ({response, user, query}) => {
 Index.propTypes = {
   response: PropTypes.array,
   user: PropTypes.object,
+  bookmarks: PropTypes.object,
   query: PropTypes.object,
+  bookmarkDeleteAction: PropTypes.func.isRequired,
+  bookmarkSaveAction: PropTypes.func.isRequired,
 };
 
 export const getServerSideProps = async (ctx) => {
@@ -41,4 +55,21 @@ export const getServerSideProps = async (ctx) => {
   };
 };
 
-export default Index;
+
+const actionCreators = {
+  bookmarkDeleteAction,
+  bookmarkSaveAction,
+
+};
+
+const mapStateToProps = state => {
+  return {
+    bookmarks: state.bookmarks,
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(actionCreators, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Index);

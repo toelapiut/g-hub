@@ -61,6 +61,9 @@
     background: greenyellow;
 }
 
+.bookmarker{
+    @apply cursor-pointer;
+}
 .pink {
     background: hotpink;
 }
