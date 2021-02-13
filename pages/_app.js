@@ -1,10 +1,15 @@
 import '../styles/globals.css';
 import '../styles/tailwind.css';
 import PropTypes from 'prop-types';
+import Layout from '../src/components/Layout';
 
 
 function MyApp({Component, pageProps}) {
-  return <Component {...pageProps} />;
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
 
 
